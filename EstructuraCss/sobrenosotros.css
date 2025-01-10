@@ -1,0 +1,388 @@
+/* Base generada por chatgpt para acelerar el proceso y posteriormente revisado y editado para que encaje con el diseño planificado */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* -----------------------------------------------------------------------------------------------Estilos Generales */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+/* -----------------------------------------------------------------------------------------------Estilos Generales- */
+
+/* -----------------------------------------------------------------------------------------------Cuerpo general web */
+main {
+    flex: 1;
+}
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* -----------------------------------------------------------------------------------------------Cuerpo general web- */
+
+/* -----------------------------------------------------------------------------------------------Fuentes */
+.nombreempresa h1 {
+    font-family: "Revalia", serif;
+}
+
+.botonesmenuderecha button {
+    font-family: "Orbitron", serif;
+}
+
+h3,
+p {
+    font-family: "Prosto One", serif;
+}
+
+/* -----------------------------------------------------------------------------------------------Fuentes- */
+
+/* -----------------------------------------------------------------------------------------------Logo y nombre de la empresa */
+header {
+    background-color: #F5F8FA;
+}
+
+.encabezado {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    align-items: flex-start;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.identificadorempresa {
+    gap: 0.5rem;
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.identificadorempresa img {
+    width: 100%;
+    height: 100%;
+}
+
+.nombreempresa h1 {
+    margin: 0;
+    font-size: 5rem;
+    margin-left: 10px;
+    color: #F47B20;
+}
+
+/* -----------------------------------------------------------------------------------------------Logo y nombre de la empresa- */
+
+/* -----------------------------------------------------------------------------------------------Botones del menú derecho */
+.botonesmenuderecha {
+    display: flex;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    gap: 3rem;
+}
+
+.botonesmenuderecha button {
+    background: none;
+    border: none;
+    border-radius: 10px;
+    color: #333;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.botonesmenuderecha button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #F47B20;
+    transition: 0.6s ease;
+}
+
+.botonesmenuderecha button:hover {
+    color: #F47B20;
+}
+
+.botonesmenuderecha button:hover::after {
+    width: 100%;
+}
+
+/* -----------------------------------------------------------------------------------------------Botones del menú derecho- */
+
+/* -----------------------------------------------------------------------------------------------Sobre Nosotros */
+
+.titlesobrenosotros h2 {
+    font-family: "Orbitron", serif;
+    color: #F47B20;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* Asegúrate de que el contenido esté centrado */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Caja de descripción */
+.cajadescripcion {
+    height: 100%;
+    width: 80%;
+    max-width: 80%;
+    margin-bottom: 70px;
+    background-color: #F5F8FA;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto dentro de la descripción */
+.descripcion {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Contenedor del slider */
+.slider {
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor interno del slider */
+.slider-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    width: max-content;
+}
+
+/* Imágenes del slider */
+.slider-track img {
+    width: 300px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+/* Animación del slider */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* -----------------------------------------------------------------------------------------------Sobre Nosotros- */
+
+/* -----------------------------------------------------------------------------------------------Footer */
+footer {
+    background-color: #F5F8FA;
+    display: flex;
+    padding: 20px 0;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footerpermanente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.textofooter {
+    margin: 0;
+    font-size: 14px;
+    color: #333333;
+    margin-right: 1.5rem;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: flex;
+    margin: 0 10px;
+}
+
+li a {
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.6s ease;
+}
+
+li a:hover {
+    color: #ff9925;
+}
+
+/* -----------------------------------------------------------------------------------------------Footer- */
+
+/* -----------------------------------------------------------------------------------------------MOVIL */
+@media (max-width: 414px) {
+    .encabezado {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+        height: auto;
+    }
+
+    .identificadorempresa {
+        margin-left: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nombreempresa h1 {
+        font-size: 3rem;
+        margin-left: 0;
+    }
+
+    .botonesmenuderecha {
+        flex-direction: column;
+        gap: 1rem;
+        margin-right: 0;
+    }
+
+    .botonesmenuderecha button {
+        font-size: 1.2rem;
+    }
+
+    .descripcion {
+        margin: 0;
+        font-size: 0.8rem;
+    }
+
+    .empresa h2 {
+        margin-bottom: 15px;
+        color: #f9f9f9;
+        font-size: 1rem;
+    }
+
+    .empresa p strong {
+        color: #f9f9f9;
+        font-size: 0.9rem;
+    }
+    .empresa p {
+        margin: 10px 0;
+        color: #f9f9f9;
+        line-height: 1.5;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footerpermanente {
+        flex-direction: column;
+    }
+
+    .textofooter {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+/* -----------------------------------------------------------------------------------------------MOVIL */
+
+/* -----------------------------------------------------------------------------------------------TABLET */
+@media (min-width: 415px) and (max-width: 1280px) {
+    .encabezado {
+        padding: 20px;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .identificadorempresa {
+        gap: 0.5rem;
+        display: flex;
+        align-items: center;
+        margin-left: 0px;
+    }
+
+    .nombreempresa h1 {
+        font-size: 2rem;
+    }
+
+    .botonesmenuderecha {
+        gap: 2rem;
+        margin-right: 0px;
+        margin-top: 0px;
+    }
+    
+    .botonesmenuderecha button {
+        font-size: 1.7rem;
+    }
+
+    main {
+        justify-content: space-around;
+    }
+
+    .descripcion {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer ul {
+        list-style: none;
+        display: flex
+    ;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footerpermanente {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .textofooter {
+        margin: 0;
+        font-size: 0.7rem;
+    }
+}
+/* -----------------------------------------------------------------------------------------------TABLET */

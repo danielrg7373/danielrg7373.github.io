@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../EstructuraCss/articulos.css">
+    <!-- Enlace a Google Fonts e iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Revalia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Revalia&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
+    <title>Articulos</title>
+</head>
+
+<body>
+    <div class="contenedor-principal">
+        <!-- Encabezado -->
+        <header>
+            <div class="encabezado">
+                <!-- Logo y nombre de empresa -->
+                <div class="identificadorempresa">
+                    <div><img src="../Varios/imagenes/logoweb.png" alt="logoempresa"></div>
+                    <div class="nombreempresa">
+                        <h1>Microclima</h1>
+                    </div>
+                </div>
+                <!-- Botones derechos de la web -->
+                <div class="botonesmenuderecha">
+                    <button id="catálogo" class="catálogo">Catálogo</button>
+                    <button id="nosotros" class="nosotros">Sobre nosotros</button>
+                    <button id="contacto" class="contacto">Contacto</button>
+                </div>
+            </div>
+        </header>
+        <!-- Contenido de la pagina (con ayuda de chatgpt y posteriormente editado) -->
+        <main>
+            <div class="filtro">
+                <h3>Precio</h3>
+                <div class="filtro-precio">
+                    <input class="precio-max" type="number" id="precio-max" value="3000" min="0" readonly> €
+                    <div class="rango">
+                        <input type="range" id="rango-max" min="0" max="3000" step="50" value="3000">
+                    </div>
+                </div>
+
+                <h3>Marca</h3>
+                <form id="marcaFiltroForm">
+                    <label>
+                        <input type="radio" name="categoria" value="VAILLANT"> VAILLANT
+                    </label>
+                    <label>
+                        <input type="radio" name="categoria" value="COINTRA"> COINTRA
+                    </label>
+                    <label>
+                        <input type="radio" name="categoria" value="HERMANN"> HERMANN
+                    </label>
+                    <label>
+                        <input type="radio" name="categoria" value="BAXI"> BAXI
+                    </label>
+                </form>
+
+                <h3>Potencia</h3>
+                <form id="potenciaFiltroForm">
+                    <label>
+                        <input type="radio" name="categoria" value="24kw"> 24kw
+                    </label>
+                    <label>
+                        <input type="radio" name="categoria" value="30kw"> 30kw
+                    </label>
+                    <label>
+                        <input type="radio" name="categoria" value="32kw"> 32kw
+                    </label>
+                    <label>
+                        <input type="radio" name="categoria" value="40kw"> 40kw
+                    </label>
+                </form>
+
+                <button type="button" id="aplicarFiltros">Aplicar Filtros</button>
+            </div>
+            <!-- Los articulos -->
+            <div class="columnaarticulo">
+                <ul class="artículos">
+                    <li>
+                        <img class="artículoexample" src="../Varios/imagenes/artículos/VAILLANT 32kw.jpg"
+                            alt="Calefacción y ACS">
+                        <h3>Caldera condensación gas natural VAILLANT 32kw</h3>
+                        <h3 class="precio">2899.00 €</h3>
+                    </li>
+                    <li>
+                        <img class="artículoexample" src="../Varios/imagenes/artículos/COINTRA.jpg" alt="Climatización">
+                        <h3>Caldera de condensación COINTRA 24kw</h3>
+                        <h3 class="precio">1479.00 €</h3>
+                    </li>
+                    <li>
+                        <img class="artículoexample" src="../Varios/imagenes/artículos/HERMANN.jpg" alt="Aerotermia">
+                        <h3>Caldera mixta de condensación HERMANN 30kw</h3>
+                        <h3 class="precio">1044.70 €</h3>
+                    </li>
+                    <li>
+                        <img class="artículoexample" src="../Varios/imagenes/artículos/BAXI.jpg" alt="Bombas de agua">
+                        <h3>Caldera condensación mixta BAXI 40kw</h3>
+                        <h3 class="precio">2400.19 €</h3>
+                    </li>
+                </ul>
+                <div class="mostrar-mas">
+                    <a href="#"><img class="imagenmostrarmas" src="../Varios/imagenes/artículos/flecha.png"
+                        alt="mostrar-mas"></a>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer>
+            <div class="footerpermanente">
+                <p class="textofooter">Política de privacidad | Política de cookies | Aviso legal</p>
+                <div class="iconossocialesfooter">
+                    <ul>
+                        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <p>
+                            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                                <img style="border:0;width:88px;height:31px"
+                                    src="http://jigsaw.w3.org/css-validator/images/vcss"
+                                    alt="¡CSS Válido!" />
+                            </a>
+                        </p>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="../EstructuraJs/global.js" defer></script>
+</body>
+
+</html>
