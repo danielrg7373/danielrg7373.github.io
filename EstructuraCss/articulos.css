@@ -301,6 +301,25 @@ input[type="radio"]:hover {
     transition: 0.6s ease;
 }
 
+#borrarFiltros {
+    background: none;
+    border: none;
+    color: #333;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    font-size: 25px;
+    font-weight: bold;
+    height: 2px;
+    background-color: #F5F8FA;
+    transition: 0.6s ease;
+}
+
+#borrarFiltros:hover {
+    color: #ff9925;
+    background-color: #ff9925;
+    transition: 0.6s ease;
+}
+
 /* -----------------------------------------------------------------------------------------------Articulos- */
 
 /* -----------------------------------------------------------------------------------------------Footer */
@@ -396,6 +415,7 @@ li a:hover {
         color: #f9f9f9;
         font-size: 0.9rem;
     }
+
     .empresa p {
         margin: 10px 0;
         color: #f9f9f9;
@@ -433,6 +453,7 @@ li a:hover {
         font-size: 1.2rem;
         width: 2.7rem;
     }
+
     .filtro h3 {
         font-size: 1.2rem;
     }
@@ -463,6 +484,7 @@ li a:hover {
         margin-bottom: 10px;
     }
 }
+
 /* -----------------------------------------------------------------------------------------------MOVIL */
 
 /* -----------------------------------------------------------------------------------------------TABLET */
@@ -490,7 +512,7 @@ li a:hover {
         margin-right: 0px;
         margin-top: 0px;
     }
-    
+
     .botonesmenuderecha button {
         font-size: 1.7rem;
     }
@@ -525,6 +547,7 @@ li a:hover {
         font-size: 1.2rem;
         width: 2.7rem;
     }
+
     .filtro h3 {
         font-size: 1.2rem;
     }
@@ -552,8 +575,7 @@ li a:hover {
 
     footer ul {
         list-style: none;
-        display: flex
-    ;
+        display: flex;
         gap: 8px;
         padding: 0;
         margin: 0;
@@ -569,4 +591,5 @@ li a:hover {
         font-size: 0.7rem;
     }
 }
+
 /* -----------------------------------------------------------------------------------------------TABLET */
