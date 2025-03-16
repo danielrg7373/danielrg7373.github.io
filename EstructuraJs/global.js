@@ -7,6 +7,7 @@ const buttonSobreNosotros = document.querySelector(".nosotros");
 const buttonContacto = document.querySelector(".contacto");
 const buttonCatalogo = document.querySelector(".catálogo");
 const Calefacción = document.querySelector(".artículoexample");
+const volver = document.querySelector(".volver");
 
 // Redirección a las páginas correspondientes___________________________________________________Redirección a las páginas correspondientes
 if (logo) {
@@ -39,6 +40,11 @@ if (Calefacción) {
     });
 }
 
+if (volver) {
+    volver.addEventListener("click", () => {
+        window.location.href = "../EstructuraHtml/articulos.html";
+    });
+}
 
 // Home_______________________________________________________________________________________________________________________________Home
 
