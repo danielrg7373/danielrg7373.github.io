@@ -6,6 +6,7 @@ const logo = document.querySelector(".identificadorempresa img");
 const buttonSobreNosotros = document.querySelector(".nosotros");
 const buttonContacto = document.querySelector(".contacto");
 const buttonCatalogo = document.querySelector(".catálogo");
+const Calefacción = document.querySelector(".artículoexample");
 
 // Redirección a las páginas correspondientes___________________________________________________Redirección a las páginas correspondientes
 if (logo) {
@@ -29,6 +30,12 @@ if (buttonContacto) {
 if (buttonCatalogo) {
     buttonCatalogo.addEventListener("click", () => {
         window.location.href = "../EstructuraHtml/catalogo.html";
+    });
+}
+
+if (Calefacción) {
+    Calefacción.addEventListener("click", () => {
+        window.location.href = "../EstructuraHtml/articuloindi.html";
     });
 }
 
