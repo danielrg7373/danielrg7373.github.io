@@ -1,0 +1,378 @@
+/* Base generada por chatgpt para acelerar el proceso y posteriormente revisado y editado para que encaje con el diseño planificado */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* -----------------------------------------------------------------------------------------------Estilos Generales */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -----------------------------------------------------------------------------------------------Estilos Generales- */
+
+/* -----------------------------------------------------------------------------------------------Cuerpo general web */
+main {
+    flex: 1;
+}
+
+/* -----------------------------------------------------------------------------------------------Cuerpo general web- */
+
+/* -----------------------------------------------------------------------------------------------Fuentes */
+.nombreempresa h1 {
+    font-family: "Revalia", serif;
+}
+
+.botonesmenuderecha button {
+    font-family: "Orbitron", serif;
+}
+
+h3,
+p {
+    font-family: "Prosto One", serif;
+}
+
+/* -----------------------------------------------------------------------------------------------Fuentes- */
+
+/* -----------------------------------------------------------------------------------------------Logo y nombre de la empresa */
+header {
+    background-color: #F5F8FA;
+}
+
+.encabezado {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    align-items: flex-start;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.identificadorempresa {
+    gap: 0.5rem;
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.identificadorempresa img {
+    width: 100%;
+    height: 100%;
+}
+
+.nombreempresa h1 {
+    margin: 0;
+    font-size: 5rem;
+    margin-left: 10px;
+    color: #F47B20;
+}
+
+/* -----------------------------------------------------------------------------------------------Logo y nombre de la empresa- */
+
+/* -----------------------------------------------------------------------------------------------Botones del menú derecho */
+.botonesmenuderecha {
+    display: flex;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    gap: 3rem;
+}
+
+.botonesmenuderecha button {
+    background: none;
+    border: none;
+    border-radius: 10px;
+    color: #333;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.botonesmenuderecha button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #F47B20;
+    transition: 0.6s ease;
+}
+
+.botonesmenuderecha button:hover {
+    color: #F47B20;
+}
+
+.botonesmenuderecha button:hover::after {
+    width: 100%;
+    /* Expande la línea para abarcar todo el ancho del botón */
+}
+
+/* -----------------------------------------------------------------------------------------------Botones del menú derecho- */
+
+/* -----------------------------------------------------------------------------------------------producto */
+.cajaproducto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.nombreproducto {
+    font-size: 30px;
+    font-family: "Orbitron", serif;
+}
+
+.imagenproducto {
+    height: 50%;
+    flex: 0.7;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.caracteristicas {
+    display: flex;
+    width: 90%;
+    max-width: 80rem;
+    margin-bottom: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.lista-caracteristicas {
+    font-size: 21px;
+    font-family: "Prosto One", serif;
+    margin-top: 55px;
+    margin-left: 150px;
+    line-height: 30px;
+}
+
+.descripcionproducto {
+    font-size: 21px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    background-color: #F5F8FA;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0px 100px;
+    padding: 20px 30px;
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+/* -----------------------------------------------------------------------------------------------producto- */
+
+/* -----------------------------------------------------------------------------------------------Footer */
+footer {
+    background-color: #F5F8FA;
+    /* Fondo gris claro */
+    display: flex;
+    padding: 20px 0;
+    color: #e7e7e7;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footerpermanente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.textofooter {
+    margin: 0;
+    font-size: 14px;
+    color: #333333;
+    margin-right: 1.5rem;
+}
+
+footer ul {
+    list-style: none;
+    /* Quitar los puntos de la lista */
+    display: flex;
+    /* Organiza los íconos en línea horizontal */
+    gap: 15px;
+    /* Espaciado entre los íconos */
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: flex;
+    margin: 0 10px;
+}
+
+li a {
+    font-size: 24px;
+    /* Tamaño de los íconos */
+    color: #000;
+    /* Color inicial de los íconos */
+    text-decoration: none;
+    /* Quita el subrayado */
+    transition: color 0.6s ease;
+    /* Añade una transición suave para el cambio de color */
+}
+
+li a:hover {
+    color: #ff9925;
+    /* Cambia el color al pasar el mouse (puedes personalizarlo) */
+}
+
+/* -----------------------------------------------------------------------------------------------Footer- */
+/* -----------------------------------------------------------------------------------------------MOVIL */
+@media (max-width: 414px) {
+    .encabezado {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+        height: auto;
+    }
+
+    .identificadorempresa {
+        margin-left: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nombreempresa h1 {
+        font-size: 3rem;
+        margin-left: 0;
+    }
+
+    .botonesmenuderecha {
+        flex-direction: column;
+        gap: 1rem;
+        margin-right: 0;
+    }
+
+    .botonesmenuderecha button {
+        font-size: 1.2rem;
+    }
+
+    .imagenescatalogo {
+        width: 40%;
+    }
+
+    .empresa h2 {
+        margin-bottom: 15px;
+        color: #f9f9f9;
+        font-size: 1rem;
+    }
+
+    .empresa p strong {
+        color: #f9f9f9;
+        font-size: 0.9rem;
+    }
+
+    .empresa p {
+        margin: 10px 0;
+        color: #f9f9f9;
+        line-height: 1.5;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footerpermanente {
+        flex-direction: column;
+    }
+
+    .textofooter {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* -----------------------------------------------------------------------------------------------MOVIL */
+
+/* -----------------------------------------------------------------------------------------------TABLET */
+@media (min-width: 415px) and (max-width: 1280px) {
+    .encabezado {
+        padding: 20px;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .identificadorempresa {
+        gap: 0.5rem;
+        display: flex;
+        align-items: center;
+        margin-left: 0px;
+    }
+
+    .nombreempresa h1 {
+        font-size: 2rem;
+    }
+
+    .botonesmenuderecha {
+        gap: 2rem;
+        margin-right: 0px;
+        margin-top: 0px;
+    }
+
+    .botonesmenuderecha button {
+        font-size: 1.7rem;
+    }
+
+    .imagenescatalogo {
+        width: 30%;
+    }
+
+    h3,
+    p {
+        font-size: 1.2rem;
+    }
+
+    .listacatalogo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .listacatalogo2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer ul {
+        list-style: none;
+        display: flex;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footerpermanente {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .textofooter {
+        margin: 0;
+        font-size: 0.7rem;
+    }
+}
+
+/* -----------------------------------------------------------------------------------------------TABLET */
