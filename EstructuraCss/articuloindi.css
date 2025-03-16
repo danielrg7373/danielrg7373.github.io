@@ -171,6 +171,25 @@ header {
     text-align: justify;
 }
 
+#contactanos {
+    background: none;
+    border: none;
+    color: #333;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    font-size: 25px;
+    font-weight: bold;
+    height: 2px;
+    background-color: #ffffff;
+    transition: 0.6s ease;
+}
+
+#contactanos:hover {
+    color: #ff9925;
+    background-color: #ff9925;
+    transition: 0.6s ease;
+}
+
 /* -----------------------------------------------------------------------------------------------producto- */
 
 /* -----------------------------------------------------------------------------------------------Footer */
