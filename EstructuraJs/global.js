@@ -5,8 +5,8 @@
 const logo = document.querySelector(".identificadorempresa img");
 const buttonSobreNosotros = document.querySelector(".nosotros");
 const buttonContacto = document.querySelector(".contacto");
-const buttonCatalogo = document.querySelector(".catálogo");
-const Calefacción = document.querySelector(".artículoexample");
+const buttonCatalogo = document.querySelector(".catalogo");
+const calefaccion = document.querySelector(".articuloexample");
 const volver = document.querySelector(".volver");
 
 // Redirección a las páginas correspondientes___________________________________________________Redirección a las páginas correspondientes
@@ -34,8 +34,8 @@ if (buttonCatalogo) {
     });
 }
 
-if (Calefacción) {
-    Calefacción.addEventListener("click", () => {
+if (calefaccion) {
+    calefaccion.addEventListener("click", () => {
         window.location.href = "../EstructuraHtml/articuloindi.html";
     });
 }
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // MOSTRAR MAS
 document.addEventListener("DOMContentLoaded", function () {
     const mostrarMasBtn = document.querySelector(".mostrar-mas a");
-    const columnaArticulo = document.querySelector(".columnaarticulo .artículos");
+    const columnaArticulo = document.querySelector(".columnaarticulo .articulos");
     const articulosOriginales = [...columnaArticulo.children]; // Clonamos los artículos originales
 
     mostrarMasBtn.addEventListener("click", function (e) {
@@ -92,52 +92,77 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Filtro precios__________________________________________________________________________________________________________Filtro precios
+// Filtros
+const rangoMaxInput = document.getElementById("rango-max");
+const precioMaxTexto = document.getElementById("precio-max");
+const aplicarFiltrosBtn = document.getElementById("aplicarFiltros");
+const borrarFiltrosBtn = document.getElementById("borrarFiltros");
 
-// Actualizar el precio máximo al deslizar el slider
-document.getElementById('rango-max').addEventListener('input', (event) => {
-    const precioMax = event.target.value;
-    document.getElementById('precio-max').value = precioMax; // Actualizar el valor visible
-});
-
-document.getElementById('aplicarFiltros').addEventListener('click', () => {
-    const precioMax = document.getElementById('rango-max').value;
+function aplicarFiltros() {
+    const precioMax = parseFloat(rangoMaxInput.value);
     const marcaSeleccionada = document.querySelector('#marcaFiltroForm input[name="categoria"]:checked');
     const potenciaSeleccionada = document.querySelector('#potenciaFiltroForm input[name="categoria"]:checked');
-
-    const articulos = document.querySelectorAll('.artículos li');
-
+    const articulos = document.querySelectorAll(".articulos li");
+    
     articulos.forEach(articulo => {
         const precio = parseFloat(articulo.querySelector('.precio').textContent.replace('€', '').trim());
-        
-        // Extraer la marca desde el título del artículo (marca está explícitamente nombrada)
         const titulo = articulo.querySelector('h3').textContent.toUpperCase();
         const marcasDisponibles = ["VAILLANT", "COINTRA", "HERMANN", "BAXI"];
-        const marca = marcasDisponibles.find(m => titulo.includes(m)) || '';
-
-        // Extraer la potencia desde el título del artículo (por ejemplo "24kw")
+        const marca = marcasDisponibles.find(m => titulo.includes(m)) || "";
         const potenciaMatch = titulo.match(/(\d+kw)/i);
         const potencia = potenciaMatch ? potenciaMatch[1].toLowerCase() : null;
-
         let mostrar = true;
-
-        // Filtrar por precio
-        if (precio > parseFloat(precioMax)) {
-            mostrar = false;
-        }
-
-        // Filtrar por marca
-        if (marcaSeleccionada && marca !== marcaSeleccionada.value) {
-            mostrar = false;
-        }
-
-        // Filtrar por potencia
-        if (potenciaSeleccionada && (!potencia || potencia !== potenciaSeleccionada.value)) {
-            mostrar = false;
-        }
-
-        // Mostrar u ocultar el artículo
-        articulo.style.display = mostrar ? 'block' : 'none';
+        if (precio > precioMax) mostrar = false;
+        if (marcaSeleccionada && marca !== marcaSeleccionada.value) mostrar = false;
+        if (potenciaSeleccionada && (!potencia || potencia !== potenciaSeleccionada.value)) mostrar = false;
+        articulo.style.display = mostrar ? "block" : "none";
     });
-});
+    actualizarURL(precioMax, marcaSeleccionada, potenciaSeleccionada);
+}
 
+function actualizarURL(precioMax, marca, potencia) {
+    const params = new URLSearchParams();
+    if (precioMax) params.set("precioMax", precioMax);
+    if (marca) params.set("marca", marca.value);
+    if (potencia) params.set("potencia", potencia.value);
+    history.pushState({}, "", "?" + params.toString());
+}
 
+function cargarFiltrosDesdeURL() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("precioMax")) {
+        rangoMaxInput.value = params.get("precioMax");
+        precioMaxTexto.value = params.get("precioMax");
+    }
+    if (params.has("marca")) {
+        const marcaInput = document.querySelector(`#marcaFiltroForm input[value="${params.get("marca")}"]`);
+        if (marcaInput) marcaInput.checked = true;
+    }
+    if (params.has("potencia")) {
+        const potenciaInput = document.querySelector(`#potenciaFiltroForm input[value="${params.get("potencia")}"]`);
+        if (potenciaInput) potenciaInput.checked = true;
+    }
+    aplicarFiltros();
+}
+
+if (rangoMaxInput && precioMaxTexto) {
+    rangoMaxInput.addEventListener("input", (event) => {
+        precioMaxTexto.value = event.target.value;
+    });
+}
+
+if (aplicarFiltrosBtn) {
+    aplicarFiltrosBtn.addEventListener("click", aplicarFiltros);
+}
+
+if (borrarFiltrosBtn) {
+    borrarFiltrosBtn.addEventListener("click", () => {
+        rangoMaxInput.value = rangoMaxInput.max;
+        precioMaxTexto.value = rangoMaxInput.max;
+        document.querySelectorAll('#marcaFiltroForm input[name="categoria"], #potenciaFiltroForm input[name="categoria"]').forEach(input => input.checked = false);
+        history.pushState({}, "", window.location.pathname);
+        document.querySelectorAll(".articulos li").forEach(articulo => articulo.style.display = "block");
+    });
+}
+
+cargarFiltrosDesdeURL();
